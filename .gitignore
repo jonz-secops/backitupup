@@ -3,9 +3,15 @@
 config/database.yml
 credentials.json
 
+# Ignore filter-repo metadata directory
+.git/filter-repo/
+
 # Ignore IDE and OS files
 *.log
 *.swp
 .DS_Store
 .idea/
 .vscode/
+
+# Ignore others
+node_modules/
