@@ -1,0 +1,11 @@
+# Ignore sensitive files
+.env
+config/database.yml
+credentials.json
+
+# Ignore IDE and OS files
+*.log
+*.swp
+.DS_Store
+.idea/
+.vscode/
