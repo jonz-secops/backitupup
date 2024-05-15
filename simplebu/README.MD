@@ -8,7 +8,7 @@
 
 - **Simple Backup:** Perform basic directory backups with minimal configuration.
 - **Easy Scheduled Job Integration:** Because time based directories are utilized as well as the process name for folder name, it's easier to adopt this to recurring backup jobs.
-- **Ease of Use:** User-friendly command-line interface for straightforward operations.
+- **Ease of Use:** User-friendly and simple.
 
 ## Installation
 
@@ -20,16 +20,18 @@
   "Libraries": ["os", "shutil", "sys", "time"],
   "Shell": "Bash compatible"
 }
+```
 
-Preferences
+### Preferences
 
-json
+```json
 
 {
   "OS": "Linux",
   "Kernel": ">=6.5",
   "Distro": ["Fedora", "Ubuntu", "Debian"]
 }
+```
 
 To use simplebu, you need to have Python 3 installed. You can clone the repository and navigate to the simplebu directory.
 
