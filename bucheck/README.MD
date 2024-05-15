@@ -8,6 +8,12 @@
 - **Compare Directories:** Compare directory structures and files to identify differences.
 - **Detailed Reporting:** Generate detailed reports of any discrepancies found during the comparison.
 
+### Two Utilities
+
+`backup.verbose.py` is meant to be more reliable, but isn't too slow. I verified a diverse source and destination directory of ~240G in ~`29`s. Also, thanks to the use of hashing, it's meant to be very accurate in detecting file differences.
+
+`backup.fastest.py` is meant to be the fastest way to perform this kind of check, that I'm aware of. Again, that same ~240G took ~`3.7`s with this utility. I feel that without hashing, this version is almost _assuming_ rather than verifying, though it hasn't failed to function as intended as of yet.
+
 ## Installation
 
 ### Requirements

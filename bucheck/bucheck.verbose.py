@@ -40,11 +40,6 @@ def compare_directories(dir1, dir2):
         # Print results
         print_diff_files(dir_comparison, dir1, dir2)
 
-        # Check for any differences
-        if dir_comparison.left_only or dir_comparison.right_only or dir_comparison.diff_files or dir_comparison.funny_files:
-            print("Differences found in directory structure.")
-            return False
-
         # Check files in both directories
         common_files = dir_comparison.common_files
         if common_files:
@@ -65,6 +60,22 @@ def compare_directories(dir1, dir2):
         for sub_dir in dir_comparison.common_dirs:
             if not compare_directories(os.path.join(dir1, sub_dir), os.path.join(dir2, sub_dir)):
                 return False
+
+        # Check for directories and files only in dir1 (source)
+        for sub_dir in dir_comparison.left_only:
+            path = os.path.join(dir1, sub_dir)
+            if os.path.isdir(path):
+                print(f"Directory only in source: {path}")
+            else:
+                print(f"File only in source: {path}")
+
+        # Check for directories and files only in dir2 (destination)
+        for sub_dir in dir_comparison.right_only:
+            path = os.path.join(dir2, sub_dir)
+            if os.path.isdir(path):
+                print(f"Directory only in destination: {path}")
+            else:
+                print(f"File only in destination: {path}")
 
         end_time = time.time()
         print(f"Directory comparison completed in {end_time - start_time:.2f} seconds.")
